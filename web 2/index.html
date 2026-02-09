@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Weather With ML Notifications</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- 🔹 Added popup CSS -->
+  <style>
+    .popup {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #b3e5fc;
+      color: #01579b;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+      z-index: 1000;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="webimage2.jpg" alt="Weather Logo" />
+    </div>
+    <nav>
+      <div class="nav-item active" data-page="today"><i class="fas fa-sun"></i> Today</div>
+      <div class="nav-item" data-page="hourly"><i class="fas fa-clock"></i> Hourly</div>
+      <div class="nav-item" data-page="10day"><i class="fas fa-calendar-day"></i> 10 Day</div>
+      <div class="nav-item" data-page="monthly"><i class="fas fa-calendar-alt"></i> Monthly</div>
+      <div class="nav-item" data-page="allergy"><i class="fas fa-leaf"></i> Allergy Tracker</div>
+      <div class="nav-item" data-page="air"><i class="fas fa-smog"></i> Air Quality</div>
+    </nav>
+  </div>
+
+  <main class="main-content">
+    <div class="advertisement">
+      <div class="ad-label">Advertisement</div>
+      <img src="webimage2.jpg" alt="Ad" />
+    </div>
+
+    <section class="search-section">
+      <div class="search-box">
+        <input id="cityInput" type="text" placeholder="Enter city name..." autocomplete="off" />
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </section>
+
+    <!-- Dynamic content: will show Today/Hourly/10Day/Monthly/Air/Allergy -->
+    <section id="dynamicContent"></section>
+
+    <!-- 🔹 Added Smart Notification Popup -->
+    <!--<div id="popup" class="popup">
+      🌤️ Normal weather: Enjoy your day safely!<br>
+      🌦️ Moderate weather – travel generally safe.<br>
+      ☀️ Good weather for outdoor fun!
+    </div>-->
+
+  </main>
+
+  <script src="main.js"></script>
+
+  <!-- 🔹 Added popup JavaScript -->
+  <script>
+    // Popup appears when user clicks the Search button
+    document.getElementById("searchBtn").addEventListener("click", function() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 20000); // disappears after 5 seconds
+    });
+  </script>
+</body>
+</html>
+  

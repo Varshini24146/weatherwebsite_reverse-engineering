@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to bottom, #a8edea, #fed6e3);
+  display: flex;
+  min-height: 100vh;
+  color: #333;
+}
+
+.sidebar {
+  width: 260px;
+  background: #023e8a;
+  color: #caf0f8;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+}
+
+.logo img {
+  width: 120px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.nav-item {
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.19s;
+}
+.nav-item.active, .nav-item:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 35px 45px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+  border-radius: 18px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.advertisement {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.advertisement img {
+  display: block;
+  width: 100%; /* Stretch image full width */
+  height: auto;
+  object-fit: contain; /* Keep aspect ratio */
+}
+
+.ad-label {
+  font-size: 12px;
+  color: #777;
+  padding: 6px 13px;
+  background: #f0f0f0;
+  text-align: center;
+  font-weight: 600;
+}
+.advertisement img {
+  width: 100%;
+  max-width: 600px;
+  height: 110px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.search-box {
+  display: flex;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  border-radius: 21px;
+  overflow: hidden;
+  background: #f7f9fc;
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 12px 22px;
+  font-size: 15.5px;
+  color: #333;
+  outline: none;
+  background: #f7f9fc;
+}
+.search-box input:focus {
+  background: #e0f7fa;
+}
+.search-box button {
+  background: #0077b6;
+  border: none;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: white;
+  font-size: 19px;
+}
+.search-box button:hover {
+  background: #023e8a;
+}
+
+.weather-main-box,
+.air-quality-box,.allergy-box {
+  text-align: center;
+  background: #caf0f8;
+  padding: 28px 34px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(0,123,255,0.09);
+}
+
+.weather-main-box h2 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+.weather-main-box h1 {
+  font-size: 62px;
+  margin: 10px 0 13px;
+  color: #0077b6;
+  font-weight: 700;
+}
+.weather-main-box p,.air-quality-box p,.allergy-box p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+.weather-main-box p strong,
+.air-quality-box p strong,
+.allergy-box p strong {
+  font-weight: 600;
+}
+
+.ml-notifications {
+  margin-top: 14px;
+  background-color: #90e0ef;
+  border-radius: 12px;
+  padding: 19px 19px;
+  box-shadow: 0 8px 18px rgba(0,146,255,0.23);
+  margin-bottom: 13px;
+}
+.ml-notifications h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #03045e;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.ml-notifications p {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #0077b6;
+  margin: 6px 0;
+}
+
+/* Graph area */
+#graphArea {
+  margin-top: 14px;
+  background: #f5fcff;
+  border-radius: 13px;
+  padding: 13px;
+  box-shadow: 0 4px 13px rgba(1,160,255,0.10);
+}
+
+canvas {
+  margin: 0 auto !important;
+  display: block !important;
+}
